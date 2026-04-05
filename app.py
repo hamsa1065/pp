@@ -1,5 +1,5 @@
 import sys, os, tempfile
-sys.path.insert(0, "python")
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "python"))
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
