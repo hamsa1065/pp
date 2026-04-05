@@ -8,9 +8,9 @@ import { promisify } from 'util';
 const execAsync = promisify(exec);
 
 // Max upload size: 100MB
-export const config = {
-  api: { bodyParser: false },
-};
+
+export const runtime = "nodejs"
+export const dynamic = "force-dynamic"
 
 export async function POST(request) {
   let tmpPath = null;
