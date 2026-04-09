@@ -208,7 +208,7 @@ export default function DementiaInfo() {
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
-                <p className="text-gray-300 text-sm font-medium">{item.sign}</p>
+                <p className="text-white text-sm font-bold">{item.sign}</p>
                 <p className="text-gray-600 text-xs mt-0.5 leading-relaxed">{item.detail}</p>
               </div>
             </div>

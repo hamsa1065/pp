@@ -155,3 +155,87 @@ body {
   50%       { transform: scale(1.5); opacity: 0.5; }
 }
 .pulse-dot { animation: pulseDot 1.5s ease infinite; }
+
+/* --- Light Theme Overrides --- */
+body.light-theme {
+  background-color: #f8fafc !important; /* professional white tone */
+  color: #1e293b !important;
+}
+
+body.light-theme .bg-mesh {
+  background: 
+    radial-gradient(ellipse 900px 700px at 10% 20%, rgba(6,182,212,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 700px 600px at 90% 80%, rgba(139,92,246,0.1) 0%, transparent 70%),
+    #f8fafc !important;
+}
+
+body.light-theme .glass,
+body.light-theme .glass-light {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(203, 213, 225, 0.8) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Text Overrides for light mode */
+body.light-theme .text-white {
+  color: #0f172a !important; /* Dark slate for primary text */
+}
+
+body.light-theme .text-gray-200,
+body.light-theme .text-gray-300 {
+  color: #1e293b !important; 
+}
+
+body.light-theme .text-gray-400,
+body.light-theme .text-gray-500 {
+  color: #475569 !important; /* Muted gray for light mode */
+}
+
+body.light-theme .text-gray-600 {
+  color: #64748b !important;
+}
+
+/* Background Overrides */
+body.light-theme [class*="bg-gray-"],
+body.light-theme [class*="bg-navy-"],
+body.light-theme [class*="bg-[#0a0f1c]"] {
+  background-color: #f1f5f9 !important; /* Very light slate */
+}
+
+body.light-theme .bg-gray-800 {
+  background-color: #e2e8f0 !important;
+}
+
+/* Border Overrides */
+body.light-theme [class*="border-gray-"] {
+  border-color: #cbd5e1 !important;
+}
+
+/* Heading color changes */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3 {
+  color: #0f172a !important; 
+}
+
+body.light-theme .text-cyan-400 {
+  color: #0284c7 !important; /* Darker cyan for light mode readability */
+}
+
+body.light-theme .text-cyan-500 {
+  color: #0ea5e9 !important;
+}
+
+/* Fix upload zone borders for light mode */
+body.light-theme .upload-zone {
+  border-color: rgba(148, 163, 184, 0.8) !important;
+}
+body.light-theme .upload-zone:hover,
+body.light-theme .upload-zone.dragover {
+  border-color: #0284c7 !important;
+}
+
+/* Change theme toggle button text color specifically */
+body.light-theme .text-gray-100 {
+  color: #0f172a !important;
+}

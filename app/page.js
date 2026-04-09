@@ -12,7 +12,18 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [result, setResult]   = useState(null);
   const [error, setError]     = useState('');
+  const [theme, setTheme]     = useState('dark');
   const resultsRef            = useRef(null);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    if (newTheme === 'light') {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
+  };
 
   const handleFileSelect = (f) => { setFile(f); setResult(null); setError(''); };
 
@@ -45,11 +56,24 @@ export default function Home() {
       {/* ── Hero — title only ── */}
       <HeroSection />
 
-      {/* ── Upload + Results — full-width two-col on large screens ── */}
+      {/* Theme toggle switch in top right */}
+      <button
+        onClick={toggleTheme}
+        className="absolute top-6 right-6 z-50 glass px-4 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105 active:scale-95 shadow-md flex items-center gap-2"
+      >
+        {theme === 'light' ? (
+          <><span className="text-xl">🌙</span> <span className="text-gray-100 hidden sm:inline">Dark</span></>
+        ) : (
+          <><span className="text-xl">☀️</span> <span className="text-cyan-400 hidden sm:inline">Light</span></>
+        )}
+      </button>
+
+      {/* ── Upload + Results ── */}
       <section className="relative z-10 w-full px-4 sm:px-8 lg:px-16 pb-12">
-        {!result ? (
-          /* Upload centred, max-width cap so it doesn't stretch absurdly */
-          <div className="max-w-3xl mx-auto">
+        <div className="flex flex-col items-center gap-8">
+          
+          {/* Upload centred always */}
+          <div className="w-full max-w-3xl">
             <UploadSection
               file={file}
               onFileSelect={handleFileSelect}
@@ -57,31 +81,17 @@ export default function Home() {
               onReset={handleReset}
               loading={loading}
               error={error}
-              hasResult={false}
+              hasResult={!!result}
             />
           </div>
-        ) : (
-          /* After result: upload on left, results on right (desktop), stacked (mobile) */
-          <div className="grid grid-cols-1 xl:grid-cols-[380px_1fr] gap-6 items-start">
-            {/* Left: upload panel */}
-            <div className="xl:sticky xl:top-6">
-              <UploadSection
-                file={file}
-                onFileSelect={handleFileSelect}
-                onDiagnose={handleDiagnose}
-                onReset={handleReset}
-                loading={loading}
-                error={error}
-                hasResult={!!result}
-              />
-            </div>
 
-            {/* Right: full dashboard */}
-            <div ref={resultsRef}>
+          {/* After result: results below */}
+          {result && (
+            <div ref={resultsRef} className="w-full max-w-full scroll-mt-24">
               <ResultsDashboard result={result} />
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </section>
 
       {/* ── Dementia Education Section ── */}
