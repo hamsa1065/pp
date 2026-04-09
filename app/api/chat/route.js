@@ -42,6 +42,8 @@ export async function POST(req) {
       temperature: 0.2, // keep it grounded and professional
     };
 
+    // Local host route disabled for deployment on Render.
+    // Use Render environment variable GROQ_API_KEY and the Groq production endpoint.
     const response = await fetch(`https://api.groq.com/openai/v1/chat/completions`, {
       method: 'POST',
       headers: {
