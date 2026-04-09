@@ -11,6 +11,10 @@ module.exports = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         display: ['var(--font-sora)', 'system-ui', 'sans-serif'],
       },
+      fontSize: {
+        'xs': ['0.825rem', { lineHeight: '1.4rem' }], // increased from 0.75rem (~13.2px)
+        'sm': ['0.925rem', { lineHeight: '1.5rem' }], // increased from 0.875rem (~14.8px)
+      },
       colors: {
         navy: {
           950: '#040810',
