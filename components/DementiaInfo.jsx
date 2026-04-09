@@ -151,11 +151,11 @@ export default function DementiaInfo() {
             <div key={i} className={`rounded-xl p-4 border ${s.color} ${s.bg}`}>
               <div className="flex items-center gap-2 mb-2">
                 <span className={`w-2 h-2 rounded-full ${s.dot}`} />
-                <span className={`text-xs font-bold font-display ${s.color.split(' ')[1]}`}>{s.stage}</span>
+                <span className={`text-sm font-bold font-display ${s.color.split(' ')[1]}`}>{s.stage}</span>
               </div>
-              <div className="text-xs text-gray-500 mb-1">{s.cdr}</div>
-              <div className={`text-sm font-semibold mb-2 ${s.color.split(' ')[1]}`}>{s.label}</div>
-              <p className="text-xs text-gray-500 leading-relaxed">{s.desc}</p>
+              <div className="text-sm text-gray-500 mb-1">{s.cdr}</div>
+              <div className={`text-base font-semibold mb-2 ${s.color.split(' ')[1]}`}>{s.label}</div>
+              <p className="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -175,10 +175,10 @@ export default function DementiaInfo() {
             <div key={i} className="glass rounded-2xl p-5 flex flex-col gap-3 hover:border-gray-700 border border-gray-800/50 transition-colors">
               <div className="text-3xl">{b.icon}</div>
               <div>
-                <div className="text-white font-semibold text-sm">{b.title}</div>
-                <div className="text-xs text-cyan-500/70 mt-0.5">Measured via: {b.watch}</div>
+                <div className="text-white font-semibold text-base">{b.title}</div>
+                <div className="text-sm text-cyan-500/70 mt-0.5">Measured via: {b.watch}</div>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed flex-1">{b.why}</p>
+              <p className="text-sm text-gray-500 leading-relaxed flex-1">{b.why}</p>
             </div>
           ))}
         </div>
@@ -208,8 +208,8 @@ export default function DementiaInfo() {
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
-                <p className="text-white text-sm font-bold">{item.sign}</p>
-                <p className="text-gray-600 text-xs mt-0.5 leading-relaxed">{item.detail}</p>
+                <p className="text-white text-base font-bold">{item.sign}</p>
+                <p className="text-gray-600 text-sm mt-1 leading-relaxed">{item.detail}</p>
               </div>
             </div>
           ))}

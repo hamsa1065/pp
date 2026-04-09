@@ -6,6 +6,7 @@ import UploadSection  from '@/components/UploadSection';
 import ResultsDashboard from '@/components/ResultsDashboard';
 import LoadingOverlay from '@/components/LoadingOverlay';
 import DementiaInfo   from '@/components/DementiaInfo';
+import Chatbot        from '@/components/Chatbot';
 
 export default function Home() {
   const [file, setFile]       = useState(null);
@@ -98,7 +99,7 @@ export default function Home() {
       <DementiaInfo />
 
       {/* ── Footer ── */}
-      <footer className="relative z-10 border-t border-gray-800/50 py-8">
+      <footer className="relative z-10 border-t border-gray-800/50 py-8 text-center sm:text-left">
         <div className="w-full px-4 sm:px-8 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
             <p className="text-gray-400 text-sm font-medium">Dementia BioTracker</p>
@@ -106,12 +107,15 @@ export default function Home() {
               K.L.N. College of Engineering · Department of AI &amp; Data Science
             </p>
           </div>
-          <p className="text-gray-700 text-xs text-right max-w-sm">
+          <p className="text-gray-700 text-xs text-center sm:text-right max-w-sm">
             ⚠️ Screening tool only — not a clinical diagnosis.
             Always consult a certified neurologist.
           </p>
         </div>
       </footer>
+
+      {/* ── AI Chatbot ── */}
+      <Chatbot />
     </main>
   );
 }
